@@ -1,5 +1,5 @@
-void terrain(){
- lights(); 
+void terrain() {
+  lights();
   flying -=0.01;
   float yoff= flying;
   for ( int y = 0; y< rows; y++) {
@@ -12,15 +12,16 @@ void terrain(){
   }
 
 
-  noStroke(); 
+  noStroke();
 
 
   //noFill();
-pushMatrix();
+  pushMatrix();
   fill ( Ggreen);
   translate ( width/2, height/2+100);
 
-  rotateX(PI/3);
+  rotateX(PI/2);
+ 
 
   translate ( -w/2, - h/2);
 
@@ -32,8 +33,6 @@ pushMatrix();
     }
     endShape();
   }
-  
+
   popMatrix();
-  
-  
 }

@@ -1,22 +1,10 @@
-void plane(){
-  
-  
-  
-  pushMatrix(); 
-  rotate(PI);
-  translate ( width/2, height/2+ 100 , -200); 
-  scale ( 50); 
-  shape ( plane); 
-  
-  
-  
+void drawPlane() {
+  pushMatrix();
+  translate(planeX,planeY, planeZ); 
+  //rotateX(PI); 
+   rotateY(yaw);
+  rotateX(pitch);
+  scale(50);
+  shape(plane);
   popMatrix();
-  
-  
-  
-  
-  
-  
-  
-  
 }

@@ -5,11 +5,11 @@ color white = #FFFFFF;
 color Ggreen = #4F7942;
 color Mgreen = #355E3B;
 
-//key codes 
-boolean wkey, skey,akey, dkey , spacekey; 
-float speed;
+//key codes
+boolean wkey, skey, akey, dkey, spacekey;
+float speed=5;
 float bank, turn;
-float pitch = 0 ; 
+
 
 
 //terrain generation variables
@@ -21,37 +21,41 @@ float flying=0;
 
 float [][] terrain;
 
-//loading the plane 
-PShape plane; 
+//loading the plane
+PShape plane;
+
+
+//Plane coordinates
+float planeX=0;
+float planeY= 0;
+float planeZ= 0;
+float pitch = 0 ;
+float yaw= 0 ; 
 
 
 
 
 void setup() {
   //size ( 800,800, P3D);
-  
-fullScreen(P3D); 
+
+  fullScreen(P3D);
   cols = w/ scl;
   rows = h/scl;
   terrain = new float [cols] [rows];
   plane = loadShape("plane.obj");
+  noCursor();
 }
 
 
 
 void draw() {
-  
+
   background (skyblue);
-terrain();
-act();
-plane(); 
-  
-   
+  terrain();
+  act();
+  drawPlane();
+  mouseControl();
 }
 
 void act() {
-
 }
-
-  
-  

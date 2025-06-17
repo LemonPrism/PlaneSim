@@ -1,4 +1,7 @@
 
+import java.awt.Robot; 
+Robot robot;
+
 color skyblue = #87CEEB;
 color black = #000000;
 color white = #FFFFFF;
@@ -27,7 +30,7 @@ PShape plane;
 //Plane coordinates
 float planeX=CENTER;
 float planeY= 1000;
-float planeZ= CENTER;
+float planeZ=0;
 float pitch = 0 ;
 float yaw= 0 ; 
 float speed=5;
@@ -45,6 +48,7 @@ void setup() {
   rows = h/scl;
   terrain = new float [cols] [rows];
   plane = loadShape("plane.obj");
+ 
   noCursor();
 }
 
@@ -57,6 +61,8 @@ void draw() {
   act();
   drawPlane();
   mouseControl();
+
+
 }
 
 void act() {

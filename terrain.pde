@@ -1,6 +1,6 @@
 void terrain() {
   float noiseStartX = scrollX * 0.0025;
-  float noiseStartZ = scrollZ * 0.0025;
+  float noiseStartZ = scrollZ * -0.0025;
 
   for (int y = 0; y < rows; y++) {
     float zOff = noiseStartZ + y * 0.1;
@@ -16,7 +16,7 @@ void terrain() {
 lights();
   translate(0, 300, 0); 
   rotateX(HALF_PI);      
-  translate(-w / 2, -h / 2);
+  //translate(-w / 2, -h / 2);
 
   for (int y = 0; y < rows - 1; y++) {
     beginShape(TRIANGLE_STRIP);

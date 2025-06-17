@@ -1,35 +1,29 @@
 void terrain() {
-  lights();
-  flying -=0.01;
-  float yoff= flying;
-  for ( int y = 0; y< rows; y++) {
-    float xoff=0;
-    for ( int x = 0; x < cols; x ++) {
-      terrain[x][y] = map(noise(xoff, yoff), 0, 1, -100, 100);
-      xoff+=0.1;
+  float noiseStartX = scrollX * 0.0025;
+  float noiseStartZ = scrollZ * 0.0025;
+
+  for (int y = 0; y < rows; y++) {
+    float zOff = noiseStartZ + y * 0.1;
+    for (int x = 0; x < cols; x++) {
+      float xOff = noiseStartX + x * 0.1;
+      terrain[x][y] = map(noise(xOff, zOff), 0, 1, -200, 400);
     }
-    yoff += 0.1;
   }
 
-
   noStroke();
-
-
-  //noFill();
   pushMatrix();
-  fill ( Ggreen);
-  translate ( width/2, height/2+100);
 
-  rotateX(PI/2);
- 
+lights();
+  translate(0, 300, 0); 
+  rotateX(HALF_PI);      
+  translate(-w / 2, -h / 2);
 
-  translate ( -w/2, - h/2);
-
-  for ( int y = 0; y< rows-1; y++) {
+  for (int y = 0; y < rows - 1; y++) {
     beginShape(TRIANGLE_STRIP);
-    for ( int x = 0; x < cols; x ++) {
-      vertex( x*scl, y*scl, terrain [x][y]);
-      vertex( x*scl, (y+1)*scl, terrain [x][y+1]);
+    for (int x = 0; x < cols; x++) {
+      fill(Ggreen);
+      vertex(x * scl, y * scl, terrain[x][y]);
+      vertex(x * scl, (y + 1) * scl, terrain[x][y + 1]);
     }
     endShape();
   }

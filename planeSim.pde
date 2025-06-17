@@ -7,7 +7,6 @@ color Mgreen = #355E3B;
 
 //key codes
 boolean wkey, skey, akey, dkey, spacekey;
-float speed=5;
 float bank, turn;
 
 
@@ -26,12 +25,15 @@ PShape plane;
 
 
 //Plane coordinates
-float planeX=0;
-float planeY= 0;
-float planeZ= 0;
+float planeX=CENTER;
+float planeY= 1000;
+float planeZ= CENTER;
 float pitch = 0 ;
 float yaw= 0 ; 
-
+float speed=5;
+float roll = 0;
+float scrollX = 0;  
+float scrollZ = 0;
 
 
 

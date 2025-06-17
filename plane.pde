@@ -1,10 +1,10 @@
 void drawPlane() {
   pushMatrix();
-  translate(planeX,planeY, planeZ); 
-  //rotateX(PI); 
-   rotateY(yaw);
+  translate(width / 2, height / 2, 0);  
+  rotateZ(roll);
   rotateX(pitch);
-  scale(50);
-  shape(plane);
+  rotateY(yaw);
+  scale(20);
+  shape(plane);  
   popMatrix();
 }

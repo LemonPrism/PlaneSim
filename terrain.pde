@@ -14,7 +14,7 @@ void terrain() {
   pushMatrix();
 
 lights();
-  translate(0, 300, 0); 
+  translate(0, 300+scrollY, 0); 
   rotateX(HALF_PI);      
   //translate(-w / 2, -h / 2);
 

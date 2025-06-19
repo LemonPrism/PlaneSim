@@ -7,13 +7,25 @@ void mouseControl() {
   yaw += (mouseX - centerX) * sensitivity;
   pitch += (mouseY - centerY) * sensitivity;
   roll = -(mouseX - centerX) * 0.001;
-  pitch = constrain(pitch, -PI / 2, PI / 2);
+  pitch = constrain(pitch, -PI /4, PI / 4);
 
 
   float dx = cos(pitch) * sin(yaw);
   float dz = -cos(pitch) * cos(yaw);
+  float dy = sin(pitch);
+  
   scrollX += dx*speed;
   scrollZ += dz*speed;
+  scrollY += dy  *speed; 
+
+  
+  if(wkey&&speed < 15){
+    speed = speed++;
+ 
+  }if ( skey&&speed > 5){
+    
+    speed--;
+  }
 
   PMatrix3D orientation = new PMatrix3D();
   orientation.rotateZ(roll);

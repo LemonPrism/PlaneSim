@@ -1,5 +1,5 @@
 
-import java.awt.Robot; 
+import java.awt.Robot;
 Robot robot;
 
 color skyblue = #87CEEB;
@@ -32,11 +32,12 @@ float planeX=CENTER;
 float planeY= 1000;
 float planeZ=0;
 float pitch = 0 ;
-float yaw= 0 ; 
+float yaw= 0 ;
 float speed=5;
 float roll = 0;
-float scrollX = 0;  
+float scrollX = 0;
 float scrollZ = 0;
+float scrollY=0;
 
 
 
@@ -48,7 +49,7 @@ void setup() {
   rows = h/scl;
   terrain = new float [cols] [rows];
   plane = loadShape("plane.obj");
- 
+
   noCursor();
 }
 
@@ -61,8 +62,6 @@ void draw() {
   act();
   drawPlane();
   mouseControl();
-
-
 }
 
 void act() {
